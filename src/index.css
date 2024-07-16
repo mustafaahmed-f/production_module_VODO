@@ -16,10 +16,20 @@ body {
   .layout {
     @apply grid gap-3 bg-white sm:gap-8 grid-cols-layOut;
   }
+  .inputField {
+    @apply col-span-1 border rounded-full shadow-none outline-none sm:col-span-1 focus:shadow-none border-section-border focus:border-sideBar-toggle;
+  }
+  .switcher {
+    @apply mt-4 rounded-full outline-none h-9 border-section-border hover:border-sideBar-toggle text-main-shadow sm:mt-0;
+  }
+  .datePicker {
+    @apply w-full px-4 py-3 border rounded-full outline-none border-section-border outline-offset-0 outline-1 focus:outline-sideBar-toggle text-main-shadow h-9;
+  }
 }
 
 .outlet-outer-wrapper::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 .outlet-outer-wrapper::-webkit-scrollbar-track {
   background-color: #eb3c33;
@@ -28,4 +38,24 @@ body {
 .outlet-outer-wrapper::-webkit-scrollbar-thumb {
   background-color: #eeeaea;
   border-radius: 5px;
+}
+
+.tableContainer::-webkit-scrollbar {
+  height: 8px;
+  display: none;
+}
+
+.tableContainer:hover::-webkit-scrollbar {
+  height: 8px;
+  display: block;
+}
+.tableContainer::-webkit-scrollbar-track {
+  background-color: #eb3c33;
+  border-radius: 5px;
+  transition: height 0.5s;
+}
+.tableContainer::-webkit-scrollbar-thumb {
+  background-color: #eeeaea;
+  border-radius: 5px;
+  transition: height 0.5s;
 }

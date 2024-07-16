@@ -1,3 +1,4 @@
+import React from "react";
 import { Outlet } from "react-router-dom";
 import { SideBar } from "vodo-react-components";
 import { modulesArr } from "./lib/Services/Utils/sideBarModules";

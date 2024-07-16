@@ -1,7 +1,7 @@
 import React, { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import "../node_modules/vodo-react-components/dist/index.css";
+import "./index.css";
 
 import Router from "./Router/Router";
 import { Providers } from "./lib/Stores/Providers";

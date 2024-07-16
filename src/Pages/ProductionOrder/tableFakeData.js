@@ -1,21 +1,75 @@
 import { Button } from "vodo-react-components";
+import React from "react";
 
 import TableBtn from "../../Components/TableBtn/TableBtn";
 import { EyeICon } from "vodo-icons";
 import { EditIcon } from "vodo-icons";
 
 export const TabelHead = [
-  { accessorKey: "view", header: <EyeICon /> },
-  { accessorKey: "edit", header: <EditIcon /> },
-  { accessorKey: "date", header: <Button>Date</Button> },
-  { accessorKey: "createdBy", header: <Button>Created By</Button> },
-  { accessorKey: "reference", header: <Button>#</Button> },
+  {
+    accessorKey: "view",
+    header: (
+      <div className="flex items-center justify-center ">
+        <EyeICon />
+      </div>
+    ),
+  },
+  {
+    accessorKey: "edit",
+    header: (
+      <div className="flex items-center justify-center">
+        <EditIcon />
+      </div>
+    ),
+  },
+  {
+    accessorKey: "date",
+    header: (
+      <TableBtn className="px-2 py-1 text-white text-tableHead h-fit">
+        Date
+      </TableBtn>
+    ),
+  },
+  {
+    accessorKey: "createdBy",
+    header: (
+      <TableBtn className="px-2 py-1 text-white text-tableHead h-fit">
+        Created By
+      </TableBtn>
+    ),
+  },
+  {
+    accessorKey: "reference",
+    header: (
+      <TableBtn className="px-2 py-1 text-white text-tableHead h-fit">
+        #
+      </TableBtn>
+    ),
+  },
   {
     accessorKey: "templateReference",
-    header: <Button>Template Reference</Button>,
+    header: (
+      <TableBtn className="px-2 py-1 text-white text-tableHead h-fit">
+        Template Refrence
+      </TableBtn>
+    ),
   },
-  { accessorKey: "dueBalance", header: <Button>Due Balance</Button> },
-  { accessorKey: "qty", header: <Button>Qty</Button> },
+  {
+    accessorKey: "dueBalance",
+    header: (
+      <TableBtn className="px-2 py-1 text-white text-tableHead h-fit">
+        Due Balance
+      </TableBtn>
+    ),
+  },
+  {
+    accessorKey: "qty",
+    header: (
+      <TableBtn className="px-2 py-1 text-white text-tableHead h-fit">
+        Qty
+      </TableBtn>
+    ),
+  },
   { accessorKey: "finishedItem", header: "Finished Item" },
   { accessorKey: "status", header: "Status" },
   { accessorKey: "receivedQty", header: "Received Qty" },
@@ -26,14 +80,42 @@ export const TabelHead = [
 
 export const TabelData = [
   {
-    view: <TableBtn href={"/productionOrder/1"}>view</TableBtn>,
-    edit: <TableBtn href={"/productionOrder/1"}>edit</TableBtn>,
+    view: (
+      <TableBtn
+        className="text-white text-tableData "
+        btnClassName="px-2 py-1 h-fit"
+        href={"/productionOrder/1"}
+      >
+        view
+      </TableBtn>
+    ),
+    edit: (
+      <TableBtn
+        className="text-white text-tableData "
+        btnClassName="px-2 py-1 h-fit"
+        href={"/productionOrder/1"}
+      >
+        edit
+      </TableBtn>
+    ),
     date: "2024-06-10",
     createdBy: "Mustafa",
     reference: 1,
     templateReference: 1,
-    dueBalance: <TableBtn href={"/duebalance/1"}>Due balance</TableBtn>,
-    qty: <Button>20</Button>,
+    dueBalance: (
+      <TableBtn
+        className="text-white text-tableData "
+        btnClassName="px-2 py-1 h-fit"
+        href={"/duebalance/1"}
+      >
+        Due balance
+      </TableBtn>
+    ),
+    qty: (
+      <TableBtn className="px-2 py-1 text-white text-tableData h-fit">
+        20
+      </TableBtn>
+    ),
     finishedItem: "Finished Item 1",
     status: "Status 1",
     receivedQty: "Received Qty 1",
@@ -42,15 +124,44 @@ export const TabelData = [
     writeOffRefrence: "Write Off Refrence 1",
   },
   {
-    view: <TableBtn href={"/productionOrder/2"}>view</TableBtn>,
-    edit: <TableBtn href={"/productionOrder/2"}>edit</TableBtn>,
+    view: (
+      <TableBtn
+        className="text-white text-tableData "
+        btnClassName="px-2 py-1 h-fit"
+        href={"/productionOrder/1"}
+      >
+        view
+      </TableBtn>
+    ),
+    edit: (
+      <TableBtn
+        className="text-white text-tableData "
+        btnClassName="px-2 py-1 h-fit"
+        href={"/productionOrder/1"}
+      >
+        edit
+      </TableBtn>
+    ),
     date: "2024-06-10",
     createdBy: "Ahmed",
     reference: 2,
     templateReference: 2,
-    dueBalance: <TableBtn href={"/productionOrder/2"}>Due balance</TableBtn>,
-    qty: <Button>Qty</Button>,
-    finishedItem: "Finished Item 2",
+    dueBalance: (
+      <TableBtn
+        className="text-white text-tableData "
+        btnClassName="px-2 py-1 h-fit"
+        href={"/productionOrder/2"}
+      >
+        Due balance
+      </TableBtn>
+    ),
+    qty: (
+      <TableBtn className="px-2 py-1 text-white text-tableData h-fit">
+        40
+      </TableBtn>
+    ),
+    finishedItem:
+      "Finished Item 22222222222222222 asdf asdfasdf we rasdf asdfasdfasdf we ",
     status: "Status 2",
     receivedQty: "Received Qty 2",
     successRatio: "Success Ratio 2",

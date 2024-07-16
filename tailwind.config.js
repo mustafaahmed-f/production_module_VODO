@@ -15,6 +15,10 @@ module.exports = {
       fontFamily: {
         ubuntu: ["Ubuntu", "sans-serif"],
       },
+      fontSize: {
+        tableHead: "12.5px",
+        tableData: "12px",
+      },
       fontWeight: {
         regular: 400,
         medium: 500,
@@ -29,6 +33,23 @@ module.exports = {
       },
       spacing: {
         "1/2": "2px",
+      },
+      animation: {
+        showFilter: "filterDisplay 0.7s linear forwards ",
+        hideFilter: "filterHide 0.7s linear forwards ",
+      },
+      keyframes: {
+        filterDisplay: {
+          "0%": { "max-height": "0px" },
+          "100%": { "max-height": "500px" },
+        },
+        filterHide: {
+          "0%": { "max-height": "500px" },
+          "100%": { "max-height": "0px" },
+        },
+      },
+      transitionProperty: {
+        height: "height",
       },
     },
   },
