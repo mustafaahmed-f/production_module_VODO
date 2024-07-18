@@ -12,5 +12,5 @@ export interface NewProductionOrderType {
 export interface billOfMaterialType {
   item: string;
   unit: string;
-  Qty: number;
+  qty: number;
 }

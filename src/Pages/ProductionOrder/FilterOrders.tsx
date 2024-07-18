@@ -24,7 +24,9 @@ function FilterOrders() {
     onSubmit: (values) => {
       console.log(values);
     },
+    onReset: (values) => {},
   });
+
   return (
     <form
       onSubmit={formik.handleSubmit}
@@ -64,7 +66,7 @@ function FilterOrders() {
         name="to"
         id="to"
       />
-      <FilterBtns resetFn={() => formik.resetForm({ values: initialValues })} />
+      <FilterBtns resetFn={() => formik.resetForm()} />
     </form>
   );
 }

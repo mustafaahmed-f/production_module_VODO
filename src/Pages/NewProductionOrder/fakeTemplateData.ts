@@ -19,7 +19,7 @@ export const templateData: TemplateData[] = [
     id: 2,
     templateName: "Template 2",
     finishedItem: {
-      count: 20,
+      count: 40,
       name: "تصنيع 2",
     },
     billOfMaterials: [
@@ -27,7 +27,7 @@ export const templateData: TemplateData[] = [
         id: 1,
         item: "خام 2",
         unit: "Carton",
-        Qty: 20,
+        Qty: 60,
       },
     ],
   },
@@ -36,17 +36,19 @@ export const templateData: TemplateData[] = [
 //=======================================================================
 //=======================================================================
 
-interface TemplateData {
+export interface TemplateData {
   id: number;
   templateName: string;
   finishedItem: {
     count: number;
     name: string;
   };
-  billOfMaterials: {
-    id: number;
-    item: string;
-    unit: string;
-    Qty: number;
-  }[];
+  billOfMaterials: billOfMaterialsType[];
+}
+
+interface billOfMaterialsType {
+  id: number;
+  item: string;
+  unit: string;
+  Qty: number;
 }

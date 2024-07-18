@@ -28,11 +28,13 @@ function InputField<T>({
         id={field}
         label={label}
         placeholder={placeholder}
+        closeBtnFn={() => formik.setFieldValue(field, "")}
         type="text"
         labelStyle={labelStyle}
         name={field}
         value={formik.values[field as keyof T] as string}
         onChangeFn={formik.handleChange}
+        onChange={formik.handleChange}
         onBlur={formik.handleBlur}
         className={cn(
           ` ${
