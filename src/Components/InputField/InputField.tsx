@@ -1,43 +1,54 @@
-import React from "react";
+import React, { HTMLInputTypeAttribute } from "react";
 import { cn } from "../../lib/Services/Utils/utils";
 import { UserInput } from "vodo-react-components";
 import { FormikContextType } from "formik";
-import { filterOptions } from "../../Pages/ProductionOrder/FilterOrders.types";
 
-interface inputFieldProps {
+interface inputFieldProps<T>
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   field: string;
-  formik: FormikContextType<filterOptions>;
+  formik: FormikContextType<T>;
   className?: string;
-  label: string;
+  label?: string;
+  placeholder?: string;
+  labelStyle?: string;
 }
 
-function InputField({ field, formik, className = "", label }: inputFieldProps) {
+function InputField<T>({
+  field,
+  formik,
+  className = "",
+  label,
+  placeholder,
+  labelStyle,
+  ...props
+}: inputFieldProps<T>) {
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col flex-grow gap-1">
       <UserInput
         id={field}
         label={label}
+        placeholder={placeholder}
         type="text"
+        labelStyle={labelStyle}
         name={field}
-        value={formik.values[field as keyof filterOptions]}
+        value={formik.values[field as keyof T] as string}
         onChangeFn={formik.handleChange}
         onBlur={formik.handleBlur}
         className={cn(
           ` ${
-            formik.errors[field as keyof filterOptions] &&
-            formik.touched[field as keyof filterOptions]
+            formik.errors[field as keyof T] && formik.touched[field as keyof T]
               ? "border border-red-600"
               : ""
           }`,
           className
         )}
+        {...props}
       />
-      {formik.errors[field as keyof filterOptions] &&
-        formik.touched[field as keyof filterOptions] && (
-          <p className="text-red-600 ">
-            {formik.errors[field as keyof filterOptions]}
-          </p>
-        )}
+      {formik.errors[field as keyof T] && formik.touched[field as keyof T] && (
+        <p className="text-red-600 ">
+          {formik.errors[field as keyof T] as string}
+        </p>
+      )}
     </div>
   );
 }

@@ -30,13 +30,13 @@ function FilterOrders() {
       onSubmit={formik.handleSubmit}
       className="border rounded-sm sm:space-y-0 space-y-4  border-main-shadow grid grid-cols-1 sm:grid-cols-[1fr_1fr] p-2 sm:gap-x-2 sm:gap-y-2"
     >
-      <InputField
+      <InputField<filterOptions>
         formik={formik}
         label="Reference"
         field="reference"
         className="inputField"
       />
-      <InputField
+      <InputField<filterOptions>
         formik={formik}
         label="Template Reference"
         field="templateReference"

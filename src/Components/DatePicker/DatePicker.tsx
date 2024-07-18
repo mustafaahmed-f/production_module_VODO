@@ -8,6 +8,7 @@ const DatePicker: React.FC<DatePickerProps> = ({
   onBlur,
   name,
   id,
+  ...props
 }) => {
   return (
     <input
@@ -18,6 +19,7 @@ const DatePicker: React.FC<DatePickerProps> = ({
       onChange={onChange}
       value={value}
       onBlur={onBlur}
+      {...props}
     />
   );
 };

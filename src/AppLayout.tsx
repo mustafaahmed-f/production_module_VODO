@@ -13,7 +13,7 @@ const AppLayOut = () => {
         sideBarStyle="h-screen  sm:w-full"
       />
 
-      <div className="outlet-outer-wrapper">
+      <div className="outlet-outer-wrapper font-ubuntu">
         <div className="outlet-inner-wrapper">
           <Outlet />
         </div>

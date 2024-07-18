@@ -8,9 +8,16 @@ module.exports = {
         "main-shadow": "#AAAAAA",
         "table-bg": "#F7F7F7",
         "section-border": "#E5D7D7",
+        "BillOfMaterials-bg": "#F3F3F3",
+        "Disabled-input": {
+          DEFAULT: "#E9ECEF",
+          SUB: "#EEEEEE",
+        },
       },
       gridTemplateColumns: {
         layOut: "auto 1fr",
+        dateAndRefrece: "1fr 1fr",
+        finishedItem: "0.5fr 1fr",
       },
       fontFamily: {
         ubuntu: ["Ubuntu", "sans-serif"],
@@ -18,6 +25,7 @@ module.exports = {
       fontSize: {
         tableHead: "12.5px",
         tableData: "12px",
+        labelSize: "15px",
       },
       fontWeight: {
         regular: 400,

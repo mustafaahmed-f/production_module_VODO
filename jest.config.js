@@ -1,13 +1,13 @@
-// jest.config.js
 module.exports = {
   preset: "ts-jest",
-  testEnvironment: "jsdom",
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
+  testEnvironment: "jsdom", // Set the test environment to jsdom
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
   transform: {
-    "^.+\\.tsx?$": "ts-jest",
+    "^.+\\.(ts|tsx|js|jsx)$": "babel-jest",
   },
-  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
   moduleNameMapper: {
-    "\\.(css|less|scss|sass)$": "identity-obj-proxy",
+    "^vodo-react-components$":
+      "<rootDir>/node_modules/vodo-react-components/dist/index.cjs",
   },
+  transformIgnorePatterns: ["/node_modules/(?!vodo-react-components/)"],
 };
