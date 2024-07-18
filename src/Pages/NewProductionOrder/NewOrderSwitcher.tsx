@@ -1,8 +1,7 @@
 import { FormikContextType, FormikErrors } from "formik";
-import React, { ChangeEvent } from "react";
+import React from "react";
 import { Switcher } from "vodo-react-components";
 import { NewProductionOrderType } from "./NewProductionOrder.types";
-import { cn } from "../../lib/Services/Utils/utils";
 
 interface NewOrderSwitcherProps {
   formik: FormikContextType<NewProductionOrderType>;
