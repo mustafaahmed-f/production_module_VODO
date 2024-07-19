@@ -22,6 +22,8 @@ function DateAndRefrence<T extends { IssueDate: string }>({
           name="IssueDate"
           id="IssueDate"
           value={formik?.values?.IssueDate}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           readOnly={!editableDate}
           className="px-3 py-1 text-black rounded-full outline-none bg-Disabled-input"
         />

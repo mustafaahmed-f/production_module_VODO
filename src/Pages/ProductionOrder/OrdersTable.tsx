@@ -8,7 +8,9 @@ function OrdersTable() {
         TabelHead={TabelHead}
         TabelData={TabelData}
         tableStyling={{
-          bodyElementStyle: "border border-section-border text-tableData px-1",
+          bodyElementStyle: {
+            general: "border border-section-border text-tableData px-1",
+          },
           headElementStyle:
             "border border-section-border text-tableHead px-2 py-1",
         }}

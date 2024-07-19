@@ -20,13 +20,16 @@ body {
     @apply col-span-1 border rounded-full shadow-none outline-none sm:col-span-1 focus:shadow-none border-section-border focus:border-sideBar-toggle;
   }
   .inputFieldLabel {
-    @apply text-black opacity-100;
+    @apply text-black opacity-100 text-labelSize;
   }
   .switcher {
     @apply mt-4 rounded-full outline-none h-9 border-section-border hover:border-sideBar-toggle text-main-shadow sm:mt-0;
   }
   .datePicker {
     @apply w-full px-4 py-3 border rounded-full outline-none border-section-border outline-offset-0 outline-1 focus:outline-sideBar-toggle text-main-shadow h-9;
+  }
+  .formStyle {
+    @apply flex flex-col w-full gap-2 sm:gap-3;
   }
 }
 

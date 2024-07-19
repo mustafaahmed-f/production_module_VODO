@@ -7,10 +7,13 @@ import { CheckIcon } from "vodo-icons";
 import InputField from "../../Components/InputField/InputField";
 import DateAndRefrence from "../../Components/DateAndRefrence/DateAndRefrence";
 import { Button, Switcher } from "vodo-react-components";
-import NewOrderSwitcher from "./NewOrderSwitcher";
+
 import { TemplateData, templateData } from "./fakeTemplateData";
 import FinishedItemSection from "./FinishedItemSection";
 import BillOfMaterials from "./BillOfMaterials";
+import DataSwitcher from "../../Components/Switcher/DataSwitcher";
+import BtnsSection from "./BtnsSection";
+import TableItemWrapper from "./TableItemWrapper";
 
 const today = new Date();
 
@@ -43,16 +46,14 @@ const NewProductionOrder: React.FC = () => {
     },
   });
 
-  console.log(formik.values);
-
   function addItemDetails(e: TemplateData) {
     let BillOfMaterialArr: any[] = [];
 
     e.billOfMaterials.map((item) =>
       BillOfMaterialArr.push({
-        item: item.item,
-        unit: item.unit,
-        qty: item.Qty,
+        item: <TableItemWrapper>{item.item}</TableItemWrapper>,
+        unit: <TableItemWrapper>{item.unit}</TableItemWrapper>,
+        qty: <TableItemWrapper>{item.Qty}</TableItemWrapper>,
       })
     );
 
@@ -66,10 +67,7 @@ const NewProductionOrder: React.FC = () => {
       <h2 className="mb-1 text-2xl font-semibold">Production Order</h2>
       <hr />
       <div className="w-full py-6">
-        <form
-          onSubmit={formik.handleSubmit}
-          className="flex flex-col w-full gap-2 sm:gap-3"
-        >
+        <form onSubmit={formik.handleSubmit} className="formStyle">
           <div className="flex flex-col w-full gap-2 sm:gap-3 sm:w-1/2">
             <DateAndRefrence<NewProductionOrderType> formik={formik} />
             <InputField<NewProductionOrderType>
@@ -82,13 +80,13 @@ const NewProductionOrder: React.FC = () => {
               labelStyle="inputFieldLabel mb-1"
               autoComplete="off"
             />
-            <NewOrderSwitcher
+            <DataSwitcher<NewProductionOrderType>
               formik={formik}
               field="Factory"
               formikField="Factory"
               items={["Factory1", "Factory2"]}
             />
-            <NewOrderSwitcher
+            <DataSwitcher<NewProductionOrderType>
               formik={formik}
               field="Template Production Order "
               items={templateData}
@@ -100,14 +98,7 @@ const NewProductionOrder: React.FC = () => {
           </div>
           <BillOfMaterials formik={formik} />
           <hr className="my-4" />
-          <div className="flex items-center justify-start gap-3 sm:gap-4">
-            <Button type="submit" className="rounded-full">
-              Create
-            </Button>
-            <Button variant={"outline"} type="button" className="rounded-full">
-              Create & Add another
-            </Button>
-          </div>
+          <BtnsSection />
         </form>
       </div>
     </>
