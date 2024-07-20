@@ -14,9 +14,7 @@ const AppLayOut = () => {
       />
 
       <div className="outlet-outer-wrapper font-ubuntu">
-        <div className="outlet-inner-wrapper">
-          <Outlet />
-        </div>
+        <Outlet />
       </div>
     </div>
   );

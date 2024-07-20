@@ -2,6 +2,7 @@ import React, { HTMLInputTypeAttribute } from "react";
 import { cn } from "../../lib/Services/Utils/utils";
 import { UserInput } from "vodo-react-components";
 import { FormikContextType } from "formik";
+import { get } from "lodash";
 
 interface inputFieldProps<T>
   extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -22,6 +23,8 @@ function InputField<T>({
   labelStyle,
   ...props
 }: inputFieldProps<T>) {
+  const error = get(formik.errors, field, "");
+  const touched = get(formik.touched, field, "");
   return (
     <div className="flex flex-col flex-grow gap-1">
       <UserInput
@@ -46,11 +49,7 @@ function InputField<T>({
         )}
         {...props}
       />
-      {formik.errors[field as keyof T] && formik.touched[field as keyof T] && (
-        <p className="text-red-600 ">
-          {formik.errors[field as keyof T] as string}
-        </p>
-      )}
+      {error && touched && <p className="text-red-600 ">{error as string}</p>}
     </div>
   );
 }

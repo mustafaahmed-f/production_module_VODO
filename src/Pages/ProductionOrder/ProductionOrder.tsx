@@ -9,7 +9,7 @@ function ProductionOrder() {
   const [openFilter, setOpenFilter] = useState<boolean>(false);
   const isInitialRender = useRef<boolean>(true);
   return (
-    <>
+    <div className="outlet-inner-wrapper">
       <OrderHeading
         setOpenFilter={() => {
           setOpenFilter(!openFilter);
@@ -30,7 +30,7 @@ function ProductionOrder() {
         <OrdersViewedNum />
         <OrdersPagination />
       </div>
-    </>
+    </div>
   );
 }
 

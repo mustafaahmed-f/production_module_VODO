@@ -11,7 +11,7 @@ export const templateData: TemplateData[] = [
         id: 1,
         item: "خام 1",
         unit: "Carton",
-        Qty: 20,
+        qty: 20,
       },
     ],
   },
@@ -27,7 +27,7 @@ export const templateData: TemplateData[] = [
         id: 1,
         item: "خام 2",
         unit: "Carton",
-        Qty: 60,
+        qty: 60,
       },
     ],
   },
@@ -50,5 +50,5 @@ interface billOfMaterialsType {
   id: number;
   item: string;
   unit: string;
-  Qty: number;
+  qty: number;
 }

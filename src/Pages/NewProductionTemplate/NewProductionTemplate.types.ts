@@ -9,7 +9,8 @@ export interface NewProductionTemplateType {
 }
 
 export interface billOfMaterialType {
+  id: string;
   item: string;
   unit: string;
-  qty: number;
+  qty: number | string;
 }

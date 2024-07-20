@@ -23,7 +23,8 @@ const ProcessItemSection: React.FC<ProcessItemProps> = ({ formik }) => {
         />
         <DataSwitcher<NewProductionTemplateType>
           formik={formik}
-          field={"itemName"}
+          field="itemName"
+          formikField={"itemName"}
           items={["Item 1", "Item 2"]}
         />
       </div>

@@ -1,15 +1,18 @@
 import { FormikContextType, FormikErrors } from "formik";
 import React from "react";
 import { Switcher } from "vodo-react-components";
+import { cn } from "../../lib/Services/Utils/utils";
 // import { NewProductionOrderType } from "./NewProductionOrder.types";
 
 interface DataSwitcherProps<T> {
   formik: FormikContextType<T>;
-  field: string;
+  field?: string;
   items: any[];
   targetKey?: string;
   formikField?: string;
+  className?: string;
   getOption?: (e: any) => void;
+  currentValue?: string;
 }
 
 function DataSwitcher<T>({
@@ -19,13 +22,17 @@ function DataSwitcher<T>({
   targetKey,
   getOption,
   formikField,
+  className = "",
+  currentValue,
 }: DataSwitcherProps<T>) {
   return (
     <div className="flex flex-col gap-1">
       <div className="flex flex-col">
-        <label htmlFor={field} className="font-medium text-labelSize">
-          {field}
-        </label>
+        {field && (
+          <label htmlFor={field} className="font-medium text-labelSize">
+            {field}
+          </label>
+        )}
         <Switcher
           items={items}
           setSelectedOption={(e: any) => {
@@ -36,9 +43,10 @@ function DataSwitcher<T>({
             getOption && getOption(e);
           }}
           placeHolder="Select"
-          className="mt-0 text-black switcher"
+          className={cn("mt-0 text-black switcher", className)}
           id={field}
           targetKey={targetKey ?? ""}
+          currentValue={currentValue}
         />
       </div>
       {formik.errors[formikField as keyof FormikErrors<T>] &&

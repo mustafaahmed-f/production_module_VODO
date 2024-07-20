@@ -8,10 +8,10 @@ body {
 
 @layer components {
   .outlet-outer-wrapper {
-    @apply w-full max-h-screen overflow-x-auto overflow-y-scroll;
+    @apply w-full max-h-screen py-12 overflow-x-auto overflow-y-scroll;
   }
   .outlet-inner-wrapper {
-    @apply p-4 my-8 border border-white ms-4 me-8 shadow-3xl sm:p-6 rounded-xl sm:my-12;
+    @apply p-4 border border-white ms-4 me-8 shadow-3xl sm:p-6 rounded-xl;
   }
   .layout {
     @apply grid gap-3 bg-white sm:gap-8 grid-cols-layOut;
@@ -30,6 +30,9 @@ body {
   }
   .formStyle {
     @apply flex flex-col w-full gap-2 sm:gap-3;
+  }
+  .navigationBar {
+    @apply flex items-center justify-center w-full mb-2 sm:justify-end ps-4 pe-8;
   }
 }
 
