@@ -1,4 +1,4 @@
-export const modulesArr = [
+export const modulesArr: any[] = [
   {
     title: "Production Orders",
     link: "/",

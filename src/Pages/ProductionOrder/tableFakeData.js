@@ -84,7 +84,7 @@ export const TabelData = [
       <TableBtn
         className="text-white text-tableData "
         btnClassName="px-2 py-1 h-fit"
-        href={"/productionOrder/1"}
+        href={"/view/1"}
       >
         view
       </TableBtn>
@@ -93,7 +93,7 @@ export const TabelData = [
       <TableBtn
         className="text-white text-tableData "
         btnClassName="px-2 py-1 h-fit"
-        href={"/productionOrder/1"}
+        href={"/edit/1"}
       >
         edit
       </TableBtn>
@@ -128,7 +128,7 @@ export const TabelData = [
       <TableBtn
         className="text-white text-tableData "
         btnClassName="px-2 py-1 h-fit"
-        href={"/productionOrder/1"}
+        href={"/view/2"}
       >
         view
       </TableBtn>
@@ -137,7 +137,7 @@ export const TabelData = [
       <TableBtn
         className="text-white text-tableData "
         btnClassName="px-2 py-1 h-fit"
-        href={"/productionOrder/1"}
+        href={"/edit/2"}
       >
         edit
       </TableBtn>
