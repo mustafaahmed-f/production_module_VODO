@@ -74,7 +74,7 @@ export const TabelData = [
       <TableBtn
         className="text-white text-tableData "
         btnClassName="px-2 py-1 h-fit"
-        href={"/edit/1"}
+        href={"/editTemplate/1"}
       >
         edit
       </TableBtn>
@@ -89,7 +89,7 @@ export const TabelData = [
         btnClassName="px-2 py-1 h-fit"
         href={"/duebalance/1"}
       >
-        tes1
+        test1
       </TableBtn>
     ),
     qty: (
@@ -114,7 +114,7 @@ export const TabelData = [
       <TableBtn
         className="text-white text-tableData "
         btnClassName="px-2 py-1 h-fit"
-        href={"/edit/1"}
+        href={"/editTemplate/2"}
       >
         edit
       </TableBtn>

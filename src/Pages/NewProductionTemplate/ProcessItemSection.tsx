@@ -26,6 +26,7 @@ const ProcessItemSection: React.FC<ProcessItemProps> = ({ formik }) => {
           field="itemName"
           formikField={"itemName"}
           items={["Item 1", "Item 2"]}
+          currentValue={formik.values.itemName}
         />
       </div>
     </div>

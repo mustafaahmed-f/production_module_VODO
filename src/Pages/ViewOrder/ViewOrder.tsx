@@ -1,13 +1,41 @@
 import { useLoaderData } from "react-router-dom";
 import React from "react";
+import ViewOrderHeader from "./ViewOrderHeader";
+import NavigationBar from "../../Components/NavigationBar/NavigationBar";
+import ProductionOrderDetails from "./ProductionOrderDetails";
 function ViewOrder() {
   const data: any = useLoaderData();
-  return <div>View</div>;
+  const {
+    Reference,
+    IssueDate,
+    CreatedBy,
+    Status,
+    FinalProduct,
+    FinalProductQuantity,
+    Address,
+    VatNumber,
+    BillOfMaterials,
+    TotalAverageCost,
+    AverageUnitCostOfFinalProduct,
+  } = data;
+  return (
+    <>
+      <NavigationBar
+        trialPage={`Production Order-${Reference} - View`}
+        trailLink={[{ label: "Production Orders", href: "/" }]}
+      />
+      <div className="outlet-inner-wrapper">
+        <ViewOrderHeader Reference={Reference} />
+        <hr className="my-3" />
+        <ProductionOrderDetails />
+      </div>
+    </>
+  );
 }
 
 export function loader({ params }: { params: any }) {
   return {
-    Reference: 1,
+    Reference: params.id,
     IssueDate: "2024-06-24",
     CreatedBy: "asdfaae",
     Status: "New",

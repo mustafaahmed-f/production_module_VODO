@@ -13,11 +13,13 @@ import ViewOrder, {
 
 import EditOrder from "../Pages/EditOrder/EditOrder";
 import { loader as EditOrderLoader } from "../Pages/EditOrder/EditOrder";
+import { loader as EditTemplateLoader } from "../Pages/EditTemplate/EditTemplate";
 import DueBalance from "../Pages/DueBalance/DueBalance";
 import { loader as DueBalanceLoader } from "../Pages/DueBalance/DueBalance";
 import Login from "../Pages/Login/Login";
 import AuthComponent from "../Components/AuthComponent/AuthComponent";
 import NonAuthComponent from "../Components/NonAuthComponent/NonAuthComponent";
+import EditTemplate from "../Pages/EditTemplate/EditTemplate";
 
 const router = createBrowserRouter([
   {
@@ -57,7 +59,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/view/:id",
+        path: "/viewOrder/:id",
         element: (
           <AuthComponent>
             <ViewOrder />
@@ -66,13 +68,22 @@ const router = createBrowserRouter([
         loader: ViewOrderLoader,
       },
       {
-        path: "/edit/:id",
+        path: "/editOrder/:id",
         element: (
           <AuthComponent>
             <EditOrder />
           </AuthComponent>
         ),
         loader: EditOrderLoader,
+      },
+      {
+        path: "/editTemplate/:id",
+        element: (
+          <AuthComponent>
+            <EditTemplate />
+          </AuthComponent>
+        ),
+        loader: EditTemplateLoader,
       },
       {
         path: "/duebalance/:id",
