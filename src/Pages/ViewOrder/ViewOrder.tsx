@@ -3,21 +3,10 @@ import React from "react";
 import ViewOrderHeader from "./ViewOrderHeader";
 import NavigationBar from "../../Components/NavigationBar/NavigationBar";
 import ProductionOrderDetails from "./ProductionOrderDetails";
+import { orderData } from "./orderDataType";
 function ViewOrder() {
-  const data: any = useLoaderData();
-  const {
-    Reference,
-    IssueDate,
-    CreatedBy,
-    Status,
-    FinalProduct,
-    FinalProductQuantity,
-    Address,
-    VatNumber,
-    BillOfMaterials,
-    TotalAverageCost,
-    AverageUnitCostOfFinalProduct,
-  } = data;
+  const data: orderData = useLoaderData() as orderData;
+  const { Reference } = data;
   return (
     <>
       <NavigationBar
@@ -27,7 +16,7 @@ function ViewOrder() {
       <div className="outlet-inner-wrapper">
         <ViewOrderHeader Reference={Reference} />
         <hr className="my-3" />
-        <ProductionOrderDetails />
+        <ProductionOrderDetails data={data} />
       </div>
     </>
   );
@@ -39,7 +28,9 @@ export function loader({ params }: { params: any }) {
     IssueDate: "2024-06-24",
     CreatedBy: "asdfaae",
     Status: "New",
+    Factory: "مصنع جدة",
     FinalProduct: "Product 1",
+    templateName: "test 1",
     FinalProductQuantity: 50,
     Address: "3591 Al Khandaq, Al Yarmuk, 6450، Riyadh 13243",
     VatNumber: "5000000000000",

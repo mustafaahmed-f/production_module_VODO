@@ -26,6 +26,7 @@ module.exports = {
         tableHead: "12.5px",
         tableData: "12px",
         labelSize: "15px",
+        "17px": "17px",
       },
       fontWeight: {
         regular: 400,

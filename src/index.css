@@ -78,3 +78,9 @@ body {
   box-shadow: none;
   background-color: transparent;
 }
+
+.orderTable-Production-Module th,
+.orderTable-Production-Module td {
+  border-color: black;
+  border-width: 2px;
+}
