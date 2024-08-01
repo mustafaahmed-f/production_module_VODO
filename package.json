@@ -75,6 +75,7 @@
     "jest-worker": "^29.7.0",
     "js-cookie": "^3.0.5",
     "lodash": "^4.17.21",
+    "production_module_new": "file:",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -84,7 +85,7 @@
     "tailwind-merge": "^2.4.0",
     "uuid": "^10.0.0",
     "vodo-icons": "^1.0.3",
-    "vodo-react-components": "^1.9.4",
+    "vodo-react-components": "^2.0.5",
     "yup": "^1.4.0"
   }
 }

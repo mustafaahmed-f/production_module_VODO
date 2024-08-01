@@ -20,6 +20,9 @@ import Login from "../Pages/Login/Login";
 import AuthComponent from "../Components/AuthComponent/AuthComponent";
 import NonAuthComponent from "../Components/NonAuthComponent/NonAuthComponent";
 import EditTemplate from "../Pages/EditTemplate/EditTemplate";
+import ViewTemplate, {
+  loader as ViewTemplateLoader,
+} from "../Pages/ViewTemplate/ViewTemplate";
 
 const router = createBrowserRouter([
   {
@@ -66,6 +69,15 @@ const router = createBrowserRouter([
           </AuthComponent>
         ),
         loader: ViewOrderLoader,
+      },
+      {
+        path: "/viewTemplate/:id",
+        element: (
+          <AuthComponent>
+            <ViewTemplate />
+          </AuthComponent>
+        ),
+        loader: ViewTemplateLoader,
       },
       {
         path: "/editOrder/:id",
