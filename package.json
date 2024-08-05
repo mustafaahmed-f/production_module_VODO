@@ -85,7 +85,7 @@
     "tailwind-merge": "^2.4.0",
     "uuid": "^10.0.0",
     "vodo-icons": "^1.0.3",
-    "vodo-react-components": "^2.0.5",
+    "vodo-react-components": "^2.1.1",
     "yup": "^1.4.0"
   }
 }

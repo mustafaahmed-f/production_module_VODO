@@ -6,7 +6,7 @@ import LoaderComponent from "./Components/LoaderComponent/LoaderComponent";
 
 const AppLayOut = () => {
   const navigation = useNavigation();
-  console.log(navigation.state);
+
   return (
     <div className="layout">
       <SideBar
